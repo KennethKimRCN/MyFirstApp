@@ -11,7 +11,8 @@ public class List extends AppCompatActivity {
 
     ListView myList;
     String[] items;
-
+    String[] description;
+    String[] prices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +23,16 @@ public class List extends AppCompatActivity {
 
         myList = (ListView) findViewById(R.id.myList);
         items = res.getStringArray(R.array.items);
+        prices = res.getStringArray(R.array.prices);
+        description = res.getStringArray(R.array.description);
+
+
+        ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, description);
+        myList.setAdapter(itemAdapter);
 
         //We are going to need an adapter to merge these two
-        myList.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_db, items));
+        //myList.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_db, items));
+
 
     }
 }

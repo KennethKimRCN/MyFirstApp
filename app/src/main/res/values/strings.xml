@@ -10,7 +10,7 @@
         <item> $1.99</item>
     </string-array>
 
-    <string-array name="Description">
+    <string-array name="description">
         <item>Fresh Peach from Georgia</item>
         <item>Fresh Tomato from Tomatoland</item>
     </string-array>
