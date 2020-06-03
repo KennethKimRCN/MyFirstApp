@@ -3,6 +3,7 @@ package com.example.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,5 +52,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        Button googleBtn = (Button) findViewById((R.id.googleBtn));
+
+        googleBtn.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String google = "http://sakai.rutgers.edu";
+
+                Uri webaddress = Uri.parse(google);
+
+                //This broadcasts to your phone to check if an app can open this
+                Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
+
+                if(gotoGoogle.resolveActivity(getPackageManager()) != null){
+                    startActivity(gotoGoogle);
+                }
+            }
+        }));
     }
 }
