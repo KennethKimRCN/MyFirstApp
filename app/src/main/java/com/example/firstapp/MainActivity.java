@@ -2,6 +2,7 @@ package com.example.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //To reference it, create an object of the reference type
+        //To reference a button? create an object of the reference type
         Button addBtn = (Button) findViewById(R.id.addBtn); //R is your resource object
 
         //Next we are going to assign an on-click listener
@@ -35,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
                 int result = num1 + num2;
 
                 resultTextView.setText(result + "");
+            }
+        });
+
+        //Launch and activity within app
+        Button secondActivity = (Button) findViewById((R.id.secondActivty));
+        secondActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
+                //Normally you want to name your "key" as your package address ex. com.example.firstapp
+                startIntent.putExtra("key", "Hello World");
+                //Pass information to the second screen
+                startActivity(startIntent);
             }
         });
     }
