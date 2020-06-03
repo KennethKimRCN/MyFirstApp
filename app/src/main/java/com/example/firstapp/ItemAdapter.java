@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class ItemAdapter extends BaseAdapter {
     LayoutInflater mInflater;
     String[] items;
@@ -40,9 +38,9 @@ public class ItemAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = mInflater.inflate(R.layout.new_list_db, null);
-        TextView nameTextView = (TextView) v.findViewById(R.id.nameTextView);
-        TextView descriptionTextView = (TextView) v.findViewById(R.id.desView);
-        TextView priceTextView = (TextView) v.findViewById(R.id.priceView);
+        TextView nameTextView = v.findViewById(R.id.nameTextView);
+        TextView descriptionTextView = v.findViewById(R.id.desView);
+        TextView priceTextView = v.findViewById(R.id.priceView);
 
         String name = items[position];
         String des = description[position];

@@ -2,8 +2,11 @@ package com.example.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -33,6 +36,14 @@ public class List extends AppCompatActivity {
         //We are going to need an adapter to merge these two
         //myList.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_db, items));
 
-
+        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent showDetailActivity = new Intent(getApplicationContext(), ListDetail.class);
+                //Index
+                showDetailActivity.putExtra("com.example.firstapp.ITEM_INDEX", position);
+                startActivity(showDetailActivity);
+            }
+        });
     }
 }

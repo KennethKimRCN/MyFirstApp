@@ -4,7 +4,7 @@
         <item> peach </item>
         <item> tomato </item>
     </string-array>
-    
+
     <string-array name="prices">
         <item> $0.99</item>
         <item> $1.99</item>
