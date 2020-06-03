@@ -53,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button listBtn = (Button) findViewById((R.id.listBtn));
+
+        listBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),List.class);
+                startActivity(startIntent);
+            }
+        });
+
         Button googleBtn = (Button) findViewById((R.id.googleBtn));
 
         googleBtn.setOnClickListener((new View.OnClickListener() {
