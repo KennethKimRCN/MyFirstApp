@@ -1,29 +1,18 @@
-# Foobar
+# MyFirstApp
+This is my first Android app.
+Here I have learned how to reference an object.
 
-Foobar is a Python library for dealing with word pluralization.
+## Creating Layout
 
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
+## Create an integer variable
+This is how you parse to an integer from the screen
+```java
+    EditText firstNumEditText = (EditText) findViewById(R.id.input1);
+    TextView resultTextView = (TextView) findViewById(R.id.resultNum);
+    int num1 = Integer.parseInt(firstNumEditText.getText().toString());
 ```
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+How to display text from a variable
+```java
+    resultTextView.setText(result + "");
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
